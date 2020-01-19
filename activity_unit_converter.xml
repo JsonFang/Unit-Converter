@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UnitConverterActivity">
+
+    <TextView
+        android:id="@+id/lengthLabel"
+        android:layout_width="155dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/length_label"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/lengthUnitSpinner"
+        android:layout_width="588dp"
+        android:layout_height="62dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lengthLabel" />
+
+    <TextView
+        android:id="@+id/fromLabel"
+        android:layout_width="117dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/from_label"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lengthUnitSpinner" />
+
+    <Spinner
+        android:id="@+id/lengthUnitSpinner2"
+        android:layout_width="589dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/convertAmountEditText" />
+
+    <EditText
+        android:id="@+id/convertAmountEditText"
+        android:layout_width="170dp"
+        android:layout_height="47dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="@string/convert_amount"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/fromLabel"
+        app:layout_constraintTop_toBottomOf="@+id/lengthUnitSpinner" />
+
+    <TextView
+        android:id="@+id/toLabel"
+        android:layout_width="56dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/to_label"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lengthUnitSpinner2" />
+
+    <TextView
+        android:id="@+id/convertedAmountTextView"
+        android:layout_width="175dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="348dp"
+        android:layout_marginStart="348dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/converted_amount"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/toLabel"
+        app:layout_constraintTop_toBottomOf="@+id/lengthUnitSpinner2" />
+
+    <TextView
+        android:id="@+id/formatLabel"
+        android:layout_width="255dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="172dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/format_label"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/convertedAmountTextView" />
+
+    <SeekBar
+        android:id="@+id/decimalSeekBar"
+        android:layout_width="400dp"
+        android:layout_height="57dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="16dp"
+        android:max="5"
+        android:progress="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/decimalPlacesLabel" />
+
+    <TextView
+        android:id="@+id/decimalPlacesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginLeft="176dp"
+        android:layout_marginStart="176dp"
+        android:text="@string/decimal_places_label"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/seekBarStatusView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="296dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/seek_bar_status_view"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/decimalSeekBar" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="232dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="183dp"
+        android:layout_marginStart="183dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/formatLabel">
+
+        <RadioButton
+            android:id="@+id/decimalRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="68dp"
+            android:onClick="radioGroupClick"
+            android:text="@string/decimal_radio_button"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/formatLabel" />
+
+        <RadioButton
+            android:id="@+id/scientificRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="68dp"
+            android:onClick="radioGroupClick"
+            android:text="@string/scientific_radio_button"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/decimalRadioButton"
+            app:layout_constraintTop_toBottomOf="@+id/formatLabel" />
+
+    </RadioGroup>
+
+
+</android.support.constraint.ConstraintLayout>
